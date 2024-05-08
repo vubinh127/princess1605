@@ -24,7 +24,7 @@ function startListening() {
                     microphone = audioContext.createMediaStreamSource(stream);
                     microphone.connect(analyser);
 
-                    analyser.fftSize = 32; // Higher sensitivity
+                    analyser.fftSize = 2048; // Higher sensitivity
                 }
 
                 const bufferLength = analyser.frequencyBinCount;
