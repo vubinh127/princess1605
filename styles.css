@@ -1,0 +1,309 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic);
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #333;
+    overflow: hidden;
+}
+
+#cake {
+    display: block;
+    position: relative;
+    margin: -10em auto 0 auto;
+}
+
+/* ============================================== Candle
+*/
+
+.candles {
+    background: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    top: 228px;
+    left: 50%;
+    margin-left: -2.4px;
+    margin-top: -8.33333333px;
+    width: 5px;
+    height: 35px;
+    transform: translateY(-300px);
+    backface-visibility: hidden;
+    animation: in 500ms 6s ease-out forwards;
+}
+.candles:after,
+.candles:before {
+    background: rgba(255, 0, 0, 0.4);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2.22222222px;
+}
+.candles:after {
+    top: 25%;
+    left: 0;
+}
+.candles:before {
+    top: 45%;
+    left: 0;
+}
+
+/* ============================================== Fire
+*/
+
+.fire {
+    border-radius: 100%;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -2.6px;
+    width: 6.66666667px;
+    height: 18px;
+}
+.fire:nth-child(1) {
+    animation: fuego 2s 6.5s infinite;
+}
+.fire:nth-child(2) {
+    animation: fuego 1.5s 6.5s infinite;
+}
+.fire:nth-child(3) {
+    animation: fuego 1s 6.5s infinite;
+}
+.fire:nth-child(4) {
+    animation: fuego 0.5s 6.5s infinite;
+}
+.fire:nth-child(5) {
+    animation: fuego 0.2s 6.5s infinite;
+}
+
+.fire {
+    transition: opacity 0.5s;
+}
+
+.fire.off {
+    opacity: 0;
+}
+
+/* ============================================== Animation Fire
+*/
+
+@keyframes fuego {
+    0%,
+    100% {
+        background: rgba(254, 248, 97, 0.5);
+        box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        background: rgba(255, 50, 0, 0.1);
+        box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+        transform: translateY(-20px) scale(0);
+    }
+}
+
+@keyframes in {
+    to {
+        transform: translateY(0);
+    }
+}
+
+.text {
+    color: #8b6a60;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    h1 {
+        font-size: 1.4em;
+    }
+}
+
+.text_happy {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 2rem;
+    color: rgb(240, 228, 208);
+    opacity: 0.9;
+    border: 0px;
+    outline: 0px;
+    background-color: transparent;
+    appearance: none;
+    text-align: center;
+    margin: auto;
+}
+
+.text_happy h2 {
+    margin: 10px auto 30px;
+    width: max-content;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.text_happy p {
+    margin: 10px auto;
+    font-size: 12px;
+    color: red;
+}
+
+#start {
+    font-family: Montserrat;
+    font-weight: 0;
+    font-size: 14px;
+    color: #fff;
+    background: linear-gradient(90deg, #0066cc 0%, #c500cc 100%);
+    padding: 10px 30px;
+    border: 2px solid #0066cc;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition: 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin: auto;
+}
+
+#start:hover {
+    transition: 1000ms;
+    padding: 10px 50px;
+    transform: translateY(-0px);
+    background: linear-gradient(90deg, #0066cc 0%, #c500cc 100%);
+    color: #0066cc;
+    border: solid 2px #0066cc;
+}
+
+.hidden {
+    display: none;
+}
+
+#restart {
+    font-family: Montserrat;
+    font-weight: 0;
+    font-size: 14px;
+    color: red;
+    background: pink;
+    padding: 10px 30px;
+    border: 2px solid #0066cc;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition: 1000ms;
+    transform: translateY(0);
+    cursor: pointer;
+    margin: auto;
+}
+
+#restart:hover {
+    transition: 1000ms;
+    padding: 10px 50px;
+    transform: translateY(-0px);
+    background: linear-gradient(90deg, #0066cc 0%, #c500cc 100%);
+    color: white;
+    border: solid 2px #0066cc;
+}
+
+canvas {
+    display: block;
+}
+.text_happy h1 {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: "Source Sans Pro";
+    font-size: 2em;
+    font-weight: 900;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.box_music {
+    padding: 20px;
+    margin: auto;
+}
+
+
+@keyframes glow {
+    0% {
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 0px 0px 20px rgba(255, 105, 180, 0.8), 0px 0px 30px rgba(255, 105, 180, 0.8), 0px 0px 40px rgba(255, 105, 180, 0.8);
+    }
+    100% {
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 0px 0px 20px rgba(255, 105, 180, 0.6), 0px 0px 30px rgba(255, 105, 180, 0.4), 0px 0px 40px rgba(255, 105, 180, 0.2);
+    }
+}
+
+.special-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3em;
+    color: #ff69b4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    animation: glow 1.5s infinite alternate; /* Glowing animation */
+    transform: rotate(-10deg); /* Tilted text */
+    text-align: center; /* Center the text */
+    transition: transform 0.5s; /* Smooth transition */
+}
+
+.special-text:hover {
+    transform: rotate(10deg); /* Change rotation on hover */
+}
+
+@keyframes color-change {
+    0% {
+        background: linear-gradient(to right, #ff6a00, #ee0979); /* Orange to pink gradient */
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent; /* Transparent text to show gradient */
+    }
+    50% {
+        background: linear-gradient(to right, #3498db, #2ecc71); /* Blue to green gradient */
+    }
+    100% {
+        background: linear-gradient(to right, #ff6a00, #ee0979); /* Back to the original gradient */
+    }
+}
+
+.queen-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em; /* Larger font size for emphasis */
+    font-weight: bold;
+    animation: color-change 3s infinite alternate; /* Color-changing animation */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+.queen-title:hover {
+    transform: scale(1.1); /* Slight enlargement on hover */
+}
+
+.box_image {
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    overflow: hidden; /* Clip overflowing content */
+    display: inline-block;
+}
+
+.box_image img {
+    width: 200px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    --_m: radial-gradient(#000 69%,#0000 70%) 84.5%/50%;
+    -webkit-mask-box-image: var(--_m);
+               mask-border: var(--_m);
+    clip-path: polygon(-41% 0,50% 91%, 141% 0);
+  }
+  
+  /* fallback until better support for mask-border */
+@supports not (-webkit-mask-box-image: var(--_m)) { 
+img {
+    --_m:
+    radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+    radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+    linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+    -webkit-mask: var(--_m);
+            mask: var(--_m);
+}
+}
